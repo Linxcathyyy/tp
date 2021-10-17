@@ -11,6 +11,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
+<?import javafx.scene.layout.HBox?>
 <fx:root type="javafx.stage.Stage" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
          title="Address App" minWidth="450" minHeight="600" onCloseRequest="#handleExit">
   <icons>
@@ -47,13 +48,18 @@
           </padding>
         </StackPane>
 
-        <VBox fx:id="List" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
-          <padding>
-            <Insets top="10" right="10" bottom="10" left="10" />
-          </padding>
-          <StackPane fx:id="clientListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-          <StackPane fx:id="productListPanelPlaceholder" VBox.vgrow="ALWAYS"/>
-        </VBox>
+        <HBox fx:id="twoPanels" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
+          <VBox fx:id="List" styleClass="pane-with-border" minWidth="340" prefWidth="340" VBox.vgrow="ALWAYS">
+            <padding>
+              <Insets top="10" right="10" bottom="10" left="10" />
+            </padding>
+            <StackPane fx:id="clientListPanelPlaceholder" VBox.vgrow="ALWAYS" alignment="CENTER_LEFT"/>
+            <StackPane fx:id="productListPanelPlaceholder" VBox.vgrow="ALWAYS" alignment="CENTER_LEFT"/>
+          </VBox>
+          <VBox>
+            <StackPane fx:id="moreInfoDisplay" VBox.vgrow="ALWAYS" alignment="CENTER_LEFT"/>
+          </VBox>
+        </HBox>
 
         <StackPane fx:id="statusbarPlaceholder" VBox.vgrow="NEVER" />
       </VBox>

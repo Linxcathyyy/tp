@@ -33,6 +33,7 @@ public class MainWindow extends UiPart<Stage> {
     // Independent Ui parts residing in this Ui container
     private ClientListPanel clientListPanel;
     private ProductListPanel productListPanel;
+    private MoreInfoPanel MoreInfoPanel;
     private ResultDisplay resultDisplay;
     private HelpWindow helpWindow;
 
@@ -119,6 +120,8 @@ public class MainWindow extends UiPart<Stage> {
 
         productListPanel = new ProductListPanel(logic.getFilteredProductList());
         productListPanelPlaceholder.getChildren().add(productListPanel.getRoot());
+
+        MoreInfoPanel = new MoreInfoPanel();
 
         resultDisplay = new ResultDisplay();
         resultDisplayPlaceholder.getChildren().add(resultDisplay.getRoot());
